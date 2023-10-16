@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="updated_style.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Document</title>
+</head>
+<body>
+<header>
+<h1 style="color: #47494d"> Welcome to  the Intelligent Welding Media Player website</h1><br/>
+<nav style="color: #47494d">
+<!--<a href="#SWR"> SWR</a> |-->
+<a href="#Media Player"> Media Player</a> |
+            <a href="#Diagrams"> Diagrams</a> |
+            <a href="#Summary"> Summary</a> |
+            <a href="#Chat Bot"> Chat Bot</a> |
+            <a href="#Contact Us"> Contact Us</a>
+</nav>
+</header>
+
+<section id="Media Player">
+<h2> Information about the welding test</h2>
+<ul>
+<li> Date: 2023/09/12</li>
+<li> Time: 09:58:124.86 </li>
+<li> Type: Fillet </li>
+<li> Pipe Diameter: 8" inner</li>
+</ul>
+<!--<iframe src="C:\Users\mobinamb\Desktop\classcodes/eight inner.mp4" height=400 width=600> </iframe>-->
+<!-- File Input to select video -->
+<!--<input type="file" id="videoInput" accept="video/*">-->
+<!-- Hidden actual file input -->
+<!--<input type="file" id="videoInput" accept="video/*" style="display:none;">-->
+<!-- Video element to display video -->
+<!--<video id="videoPlayer" controls height="400" width="600"></video>-->
+<!-- Custom button for file input -->
+<!--<br><button id="customButton" onclick="document.getElementById('videoInput').click();">Choose Video File</button>-->
+<!-- Button to load and play video -->
+<!--<br><button onclick="loadAndPlayVideo()">Load and Play Video</button><br>-->
+<!-- Video player and buttons layout -->
+<div class="media-container-full">
+  <div class="media-container1">
+    <!-- Video element to display video -->
+    <video controls="" height="600" id="videoPlayer" width="800"></video>
+  </div>
+  <!-- Remote control buttons -->
+  <div class="remote-control">
+    <!-- Hidden actual file input -->
+    <input accept="video/*" id="videoInput" style="display:none;" type="file"/>
+    <!-- Custom button for file input -->
+    <button class="remote-button" id="customButton" onclick="document.getElementById('videoInput').click();">Choose Video</button>
+    <!-- Button to load and play video -->
+    <button class="remote-button" onclick="loadAndPlayVideo()">Load and Play</button>
+    <!-- Placeholder buttons for other video controls -->
+    <button class="remote-button" onclick="RemoveArcLight()">Remove Arc Light</button>
+    <button class="remote-button" onclick="RemoveSpatter()">Remove Spatter</button>
+    <button class="remote-button" onclick="MotionMagnification()">Motion Magnification</button>
+    <!-- OCR Results -->
+  </div>
+</div>
+<div class="ocr-results" id="ocrResults">
+    <!-- OCR results will be populated here -->
+</div>
+
+
+</section>
+<section id="Diagrams">
+<h2>Welding parameters</h2>
+
+<div class="grid-container">
+    <div class="grid-item">
+      <p>Average current</p>
+      <img src="swr.png" alt="Average current">
+    </div>
+    <div class="grid-item">
+      <p>Voltage</p>
+      <img src="swr.png" alt="Voltage">
+    </div>
+    <div class="grid-item">
+      <p>Speed</p>
+      <img src="swr.png" alt="Speed">
+    </div>
+    <div class="grid-item">
+      <p>Weave</p>
+      <img src="swr.png" alt="Weave">
+    </div>
+    <div class="grid-item">
+      <p>WFS</p>
+      <img src="swr.png" alt="WFS">
+    </div>
+    <div class="grid-item">
+        <p>Heat</p>
+        <img src="swr.png" alt="Heat">
+      </div>
+  </div>
+
+<h2> Seam Tacking</h2>
+<div class="grid-container2">
+    <div class="grid-item">
+      <p>X Location</p>
+      <img src="swr.png" alt="X Location">
+    </div>
+    <div class="grid-item">
+      <p>Y Location</p>
+      <img src="swr.png" alt="Y Location">
+    </div>
+  </div>
+
+
+
+<h2> Defect Detetcion</h2>
+<div class="grid-container3">
+    <div class="grid-item">
+      <p>Defect Types</p>
+      <img src="swr.png" alt="Defect types">
+    </div>
+  </div>
+</section>
+
+<section id="Summary">
+<h2>summary of defect</h2>
+<table class="styled-table">
+<tbody>
+<tr>
+<td> </td>
+<td> LOP  </td>
+<td> LOF </td>
+<td> Porosity </td>
+<td> Undercut </td>
+<td> Cold Lap </td>
+<td> Normal </td>
+</tr>
+<tr>
+<td> Percentage  </td>
+<td> 40  </td>
+<td> 10 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 0 </td>
+<td> 50 </td>
+</tr>
+</tbody>
+</table>
+<h2> summary of seam location</h2>
+<table  class="styled-table">
+<tbody>
+<tr>
+<td> </td>
+<td> Jumps in X  </td>
+<td> Jumps in Y </td>
+</tr>
+<tr>
+<td> time </td>
+<td> 12:05:21  </td>
+<td> 13:17:09 </td>
+</tr>
+<tr>
+<td>amount (mm) </td>
+<td> 0.8  </td>
+<td> 2 </td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="Chat Bot">
+</section>
+
+
+<section id="Contact Us">
+<div class="form-container">
+    <h2>Submit Form</h2>
+    <form action="submit_here" method="post" class="form-grid">
+      <div class="form-group">
+        Name: <input name="name" type="text" required class="form-input" placeholder="enter your name"/>
+      </div>
+      <div class="form-group">
+        Email Address: <input name="email_address" type="text" required class="form-input" placeholder="enter your email address"/>
+      </div>
+      <div class="form-group">
+        Occupation:
+        <select name="Occupation" class="form-select">
+          <option value="Student">Student</option>
+          <option value="Welder">Welder</option>
+          <option value="Company holder">Industry Professional</option>
+          <option value="Academic professor/ researcher">Academic</option>
+        </select>
+      </div>
+      <div class="form-group">
+        Your Message: <textarea cols="50" name="Message" rows="4" class="form-textarea" placeholder="enter your message"></textarea>
+      </div>
+      <button onclick="sendEmail()" class="form-button">Submit</button>
+    </form>
+  </div>
+
+
+
+</body>
+<script src="scripts.js"></script>
+</html>
+
+<footer>
+<p>
+</p>
+</footer>
+

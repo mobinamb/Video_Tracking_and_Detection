@@ -30,37 +30,49 @@ body {
   /*filter: blur(4px); /* Adding blur to make it less focused */
 }
 
-
 .media-container-full {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 20px; /* Space from sides */
+  padding: 0 20px;
 }
 
 .media-container1 {
-  margin-left: 200px; /* Fixed space between media player and remote control */
+  width: 100%;
 }
 
 .remote-control {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: #333;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-right: 130px;
-  width: 170px;  /* Set explicit width */ 
+  width: 100%;
+  max-width: 170px;
+  margin: 20px 0;
+  /* ...other styles */
+}
+
+@media only screen and (min-width: 601px) {
+  .media-container-full {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .media-container1 {
+    margin-left: 20px;
+  }
+  .remote-control {
+    margin-right: 130px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 170px;  /* Set explicit width */ 
+  }
+}
+
+video, #videoPlayer {
   max-width: 100%;
   height: auto;
 }
 
-#videoPlayer {
-  max-width: 100%;
-  height: auto;
-}
 
 .remote-button {
   background-color: #50b3a2;
@@ -171,31 +183,14 @@ header, nav, section, footer, h1, h2, h3, p, a {
 }
 
 
+/* Existing styles for larger screens */
 .grid-container {
   display: grid;
   grid-template-rows: 1fr 1fr; 
   grid-template-columns: 1fr 1fr 1fr; 
   gap: 10px;
-  margin:20px;
+  margin: 20px;
 }
-
-.grid-container2 {
-  display: grid;
-  grid-template-rows: 1fr; 
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin:20px;
-}
-
-.grid-container3 {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr; 
-  gap: 10px;
-  margin:20px;
-}
-
-
 
 .grid-item {
   border: none;
@@ -212,6 +207,18 @@ header, nav, section, footer, h1, h2, h3, p, a {
   max-width: 100%; /* Responsive image */
   height: auto;
 }
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto; /* Auto layout */
+  }
+}
+
+
+
+
 
 
 .styled-table {

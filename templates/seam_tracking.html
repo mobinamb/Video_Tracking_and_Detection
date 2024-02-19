@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Intelligent Welding Media Player</title>
+</head>
+
+<body>
+
+  <!--<header>
+    <h1 style="color: #47494d"> Welcome to  the Intelligent Welding Media Player website</h1><br/>
+    </header>!-->
+
+    <header>
+      <h1 style="color: #47494d"> Welcome to  the Intelligent Welding Media Player website</h1><br/>
+      <nav style="color: #47494d">
+      <!--<a href="#SWR"> SWR</a> |-->
+      <a href="#Media Player"> Media Player</a> |
+                  <a href="#Diagrams"> Diagrams</a> |
+                  <a href="#Summary"> Summary</a> |
+                  <a href="#Chat Bot"> Chat Bot</a> |
+                  <a href="#Contact Us"> Contact Us</a>
+      </nav>
+      </header>
+
+
+<!-- Using the classes from your CSS -->
+<section class="media-container">
+  <img id="videoElementId" src="{{ url_for('video_feed_seam') }}" width="400" height="200"/>
+  <!-- Control Buttons -->
+  <div class="control">
+    <!-- Upload Video -->
+    <form action="{{url_for('upload_seam')}}" method="post" enctype="multipart/form-data">
+        <input class="remote-button1" type="file" name="video" accept=".mp4">
+        <input class="remote-button2" type="submit" value="Seam Tracking">
+
+    </form>
+
+    <!-- Video Playback Controls -->
+    <button class="remote-button4" onclick="playVideo()">Play</button>
+    <button class="remote-button5" onclick="pauseVideo()">Pause</button>
+  </div>
+
+  <img id="videoElementId" src="{{ url_for('video_feed_defect') }}" width="400" height="200"/>
+  <div class="control">
+    <!-- Upload Video -->
+    <form action="{{url_for('upload_defect')}}" method="post" enctype="multipart/form-data">
+        <input class="remote-button1" type="file" name="video" accept=".mp4">
+        <input class="remote-button2" type="submit" value="Defect detection">
+
+    </form>
+
+    <!-- Video Playback Controls -->
+    <button class="remote-button4" onclick="playVideo()">Play</button>
+    <button class="remote-button5" onclick="pauseVideo()">Pause</button>
+  </div>
+    
+<footer>
+  <p> Intelligent Welding Media Player &copy; 2024</p>
+</footer>
+
+</body>
+<!--<script src="{{ url_for('static', filename='seam_tracking.js') }}"></script>!-->
+</html>
+
+
+
